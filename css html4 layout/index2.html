@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .clearfix::after{
+            content:"";
+            display: block;
+            clear:both;
+        }
+
+        body{
+            font-size: 18px;
+        }
+
+        /* end css chung */
+
+        .site-wrap{
+            width: 900px;
+            margin: 0 auto;
+        }
+
+
+        .header{
+            height: 150px;
+            background-color: blue;
+            color: blueviolet;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        /* end css header */
+        .menu ul{
+            list-style: none;
+            margin: 0;
+            padding: 0 10px;
+            background-color: brown;
+            box-sizing: border-box;
+        }
+
+        .menu ul > li{
+            float: left;
+            width: 100px;
+            padding: 10px 0;
+            background-color: brown;
+        }
+
+        .menu ul > li > a{
+            text-decoration: none;
+            color: cyan;
+        }
+
+        .menu ul > li > a:hover{
+            color: floralwhite;
+        }
+        /* end css menu */
+
+        .content{
+            width: 100%;
+        }
+
+        .content-left{
+            width: 25%;
+            height: 350px;
+            background-color: forestgreen;
+            float: left;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .main-content{
+            width: 50%;
+            height: 350px;
+            background-color: fuchsia;
+            float: left;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .content-right{
+            width: 25%;
+            height: 350px;
+            background-color: green;
+            float: right;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        /* end css content */
+
+        .footer{
+            width: 100%;
+            height: 200px;
+            background-color: grey;
+            padding: 20PX;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="site-wrap">
+
+        <header class="header">
+            header của trang web
+
+        </header>
+            <!-- kết thúc header -->
+
+        <nav class="menu">
+            <ul class="clearfix">
+                <li><a href="">giới thiệu </a></li>
+                <li><a href="">trang chủ</a></li>
+                <li><a href="">bài viết</a></li>
+                <li><a href="">liên hệ</a></li>
+                <li><a href="">sản phẩm</a></li>
+            </ul>
+        </nav>
+            <!-- kết thúc menu -->
+
+        <div class="content clearfix">
+            <aside class="content-left">
+                <h4>content-left</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet reiciendis officia est expedita, eos aliquam fugiat at quo dolore exercitationem odio commodi saepe maxime voluptatum totam harum fugit, autem recusandae?</p>
+
+            </aside>
+            <!-- kết thúc content-left -->
+
+            <main class="main-content">
+                <h2>nội dung trang web</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eum est asperiores dolorum tempore cum sequi, cumque dolores eaque quis quam perspiciatis! Soluta mollitia necessitatibus culpa fugit, molestiae deleniti neque!</p>
+
+            </main>
+            <!-- kết thúc main-content -->
+
+            <aside class="content-right">
+                <h4>content-right</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo modi ducimus repellat tempora autem rem consectetur neque, natus vel est. Possimus amet alias consequuntur cupiditate deserunt tempora perspiciatis ipsam laboriosam?</p>
+
+            </aside>
+            <!-- kết thúc content-right -->
+
+        </div>
+            <!-- kết thúc content -->
+
+        <footer class="footer">
+            <h3>phần chân của web </h3>
+            <p>copyy right thuộc về w3school 2020</p>
+        </footer>
+            <!-- kết thúc footer -->
+    </div>
+</body>
+</html>
