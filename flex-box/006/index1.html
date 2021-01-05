@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+        .flex-container{
+            display: flex;
+            background-color: blue;
+        }
+
+        .flex-container > div{
+            padding: 20px;
+            margin: 20px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <pre>
+        dùng cho các thẻ item con trong thẻ flex-container.
+        order dùng để xác định vị trí cho từng thẻ
+    </pre>
+    <div class="flex-container">
+        <div style="order:4">1</div>
+        <div style="order:5">2</div>
+        <div style="order:1">3</div>
+        <div style="order:3">4</div>
+        <div style="order:2">5</div>
+    </div>
+</body>
+</html>

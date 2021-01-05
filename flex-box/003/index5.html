@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+        .flex-container{
+            display: flex;
+            height: 300px;
+            align-items: baseline;
+            background-color: blue;
+        }
+
+        .flex-container > div{
+            padding: 20px;
+            
+            border: 2px red solid;
+            /* margin: 20px; */
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <pre>align-items: baseline; áp dụng cho flex flex-container và display phải là flex
+        align-items: baseline; được sử dụng để căn chỉnh theo chiều dọc, nó sẽ có 1 đường cơ sở chạy ngang ở chính giữa các gtri con và các text sẽ nằm trên đường cơ sở đó.
+        chiều cao sẽ tự động co dãn để vừa khít với chiều cao của flex container
+       
+    </pre>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+</body>
+</html>
