@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST" onsubmit="return false">
+        <p>
+            Đăg kí tour du lịch
+        </p>
+
+        <p>
+            <label for="">Họ tên</label>
+            <input type="text" name="hoten" id="hoten" class="require" value="" placeholder="Nhập họ tên" >
+            <span id="hoten-error" style="color:red;" ></span>
+        </p>
+
+        <p>
+            <label for="">Giới tính</label>
+            <input type="radio" name="gioitinh" class="gioitinh" id="gioitinh1" value="1" >Nam
+            <input type="radio" name="gioitinh" class="gioitinh" id="gioitinh2" value="2" >Nữ
+            <span id="gioitinh-error" style="color: red;"></span>
+        </p>
+
+        <p>
+            <label for="">Địa chỉ</label>
+            <input type="text" name="diachi" class="require" id="diachi" value="" placeholder="Nhập địa chỉ">
+            <span id="diachi-error" style="color:red"></span>
+        </p>
+
+        <p>
+            <label for="">Số điện thoại</label>
+            <input type="text" name="dienthoai" class="require" id="dienthoai" value="" placeholder="Nhập số điện thoại">
+            <span id="dienthoai-error" style="color: red;"></span>
+        </p>
+
+        <p>
+            <label for="">Email</label>
+            <input type="email" name="email" id="email" class="require" value="" placeholder="Nhập email">
+            <span id="email-error" style="color: red;"></span>
+        </p>
+
+        <p>
+            <label for="">Chọn tour</label>
+            <input type="checkbox" name="tourhalong" id="tourhalong" value="">Ha long
+            <input type="checkbox" name="tourdalat" id="tourdalat" value="">Đà Lạt 
+            <input type="checkbox" name="toursapa" id="toursapa" value="">Sapa
+            <span id="tour-error" style="color: red;"></span>
+        </p>
+
+        <p>
+            <label for="">Chọn phương tiện</label>
+            <select name="" id="phuongtien">
+                <option value="">Chọn phương tiện</option>
+                <option value="1">Ô tô</option>
+                <option value="2">Tàu</option>
+                <option value="3">Máy bay</option>
+            </select>
+            <span id="phuongtien-error" style="color: red;"></span>
+        </p>
+
+        <p>
+            <label for="">Thông tin khác</label>
+            <textarea name="thongtin" id="thongtin" cols="30" rows="10"></textarea>
+        </p>
+
+        <p>
+            <button type="submit" name="dangki" onclick="validatedulieu()">Đăng kí</button>
+            <button type="reset" name="reset">Nhập lại</button>
+        </p>
+    </form>
+
+    <script>
+            function validatedulieu(){
+                var inputrequire = document.getElementsByClassName("require");
+                var validform = 1;
+                for(var i = 0; i < inputrequire.length ; i++)
+                {
+                    if(inputrequire[i].value.length<1)
+                    {
+                        if(inputrequire[i].name == 'hoten')
+                        {
+                            document.getElementById("hoten-error").innerHTML= "Vui lòng nhập họ tên";
+                            document.getElementById("hoten").focus();
+                            validform = 0;
+                        }
+
+                        if(inputrequire[i].name == 'diachi')
+                        {
+                            document.getElementById("diachi-error").innerHTML= "Vui lòng nhập địa chỉ";
+                            document.getElementById("diachi").focus();
+                            validform = 0;
+                        }
+
+                        if(inputrequire[i].name == 'dienthoai')
+                        {
+                            document.getElementById("dienthoai-error").innerHTML= "Vui lòng nhập số điện thoại";
+                            document.getElementById("dienthoai").focus();
+                            validform = 0;
+                        }
+
+                        if(inputrequire[i].name == 'email')
+                        {
+                            document.getElementById("email-error").innerHTML= "Vui lòng nhập email";
+                            document.getElementById("email").focus();
+                            validform = 0;
+                        }
+                    }
+                }
+
+                var pattern_hoten = /^([A-Za-z]+\b ){1,4}[A-Za-z]+$/;
+                var string_hoten = document.getElementById("hoten").value;
+                if(pattern_hoten.test(string_hoten) == false)
+                {
+                    document.getElementById("hoten").innerHTML="Định dạng họ tên sai vui lòng nhập lại";
+                    document.getElementById("hoten-error").focus();
+                    validform = 0;
+                }
+
+                var gioitinhnam = document.getElementById("gioitinh1");
+                var gioitinhnu = document.getElementById("gioitinh2");
+
+                if(gioitinhnam.checked==false && gioitinhnu.checked==false)
+                {
+                    document.getElementById("gioitinh-error").innerHTML = "VUI LÒNG CHỌN GIỚI TÍNH";
+                    document.getElementById("gioitinh1").focus();
+                    validform = 0;
+                }
+
+                if(document.getElementById("tourhalong").checked==false && document.getElementById("tourdalat").checked==false&& document.getElementById("toursapa").checked==false)
+                {
+                    document.getElementById("tour-error").innerHTML = "vui lòng chọn tour";
+                    validform = 0;
+
+                }
+
+                if(document.getElementById("phuongtien").value !=1 && document.getElementById("phuongtien").value !=2 && document.getElementById("phuongtien").value!=3 )
+                {
+                    document.getElementById("phuongtien-error").innerHTML = "Vui lòng chọn phuong tiện";
+                    validform = 0;
+
+                }
+                
+                if(document.getElementById("phuongtien").value==3){
+                    if(document.getElementById("tourhalong").checked == true || document.getElementById("toursapa")==true)
+                    {
+                        document.getElementById("phuongtien-error").innerHTML="Không có đường bay cho tour này";
+                        validform = 0;
+                    }
+                }
+
+                if(validform == 1)
+                {
+                    alert("Thành công");
+                    window.location="http://www.google.com";
+                }
+            }
+    </script>
+</body>
+</html>

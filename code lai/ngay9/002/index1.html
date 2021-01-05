@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="target"></ul>
+
+    <script>
+        var cities = ["hà nội", "bắc nih", "cà mau", "yên bái"]
+
+        console.log(cities);
+        var n = "";
+        for(var i=0;i<cities.length;i++)
+        {
+            n+= "<li>" + cities[i] + "</li>";
+        }
+
+        console.log(cities);
+        document.getElementById("target").innerHTML = n;
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clearfix::after{
+            content:"";
+            display: block;
+            clear: both;
+        }
+        .container{
+    
+            background-color: seagreen;
+            padding: 20px;
+        }
+
+        .hi{
+            width: 150px;
+            height: 150px;
+            background-color: aqua;
+            float: left;
+        }
+
+        .chao{
+            width: 150px;
+            height: 150px;
+            background-color: red;
+        }
+
+        .e{
+            float: left;
+        }
+
+        .c{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container clearfix">
+        <div class="chao e">
+            <h3>hi e </h3>
+        </div>
+        <div class="hi">
+            <h1>hi</h1>
+        </div>
+        <div class="chao c">chaoe</div>
+    </div>
+</body>
+</html>

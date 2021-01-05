@@ -1,0 +1,1 @@
+alert("chào mừng đến với js")
